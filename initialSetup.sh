@@ -4,8 +4,9 @@
 
 if [[ $(command -v dnf) == 0 ]]; then
 	sudo -i dnf install tmux git gnupg2 openssh
-elif
+elif [[ $(command -v pacman) == 0 ]]; then
 	sudo pacman -S tmux git gnupg openssh
+fi
 
 # Set up tmux
 ln -s ./tmux/tmux.conf ~/.tmux.conf
@@ -18,11 +19,11 @@ ln -s ./redshift/redshift.conf ~/.config/redshift/redshift.conf
 
 # Set up gnupg things
 mkdir -p ~/.gnupg
-ln -s ./gnupg/gpg.conf ~/.gnupg/gpg.conf
-ln -s ./gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
-ln -s ./gnupg/sshcontrol ~/.gnupg/sshcontrol
-ln -s ./gnupg/gnupg_agent ~/.gnupg/gnupg_agent
-chmod u+x ~/.gnupg/gnupg_agent
+HERE=$(pwd)
+ln -s $HERE/gnupg/gpg.conf ~/.gnupg/gpg.conf
+ln -s $HERE/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+ln -s $HERE/gnupg/sshcontrol ~/.gnupg/sshcontrol
+ln -s $HERE/gnupg/gnupg_agent ~/.gnupg/gnupg_agent
 
 git config --global gpg.program gpg2
 git config --global user.name jreichmann
