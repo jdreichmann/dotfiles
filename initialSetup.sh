@@ -22,3 +22,9 @@ ln -s ./gnupg/gpg.conf ~/.gnupg/gpg.conf
 ln -s ./gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ln -s ./gnupg/sshcontrol ~/.gnupg/sshcontrol
 
+git config --global gpg.program gpg2
+git config --global user.name jreichmann
+git config --global user.email johanna.reichmann@delta-industries.de
+git config --global user.signingkey 03624C433676E465
+
+
