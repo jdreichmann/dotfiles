@@ -28,5 +28,6 @@ git config --global gpg.program gpg2
 git config --global user.name jreichmann
 git config --global user.email johanna.reichmann@delta-industries.de
 git config --global user.signingkey 03624C433676E465
-
+git config --global commit.gpgsign true
+git config --global alias.logs "log --show-signature"
 
