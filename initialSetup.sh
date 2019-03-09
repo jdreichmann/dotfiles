@@ -1,13 +1,24 @@
 #!/bin/bash
 
 # Install packages which are frequently used by me
-sudo -i dnf install tmux tree git
 
-# Checkout my dotfiles and the tmux-plugin-manager
+if [[ $(command -v dnf) == 0 ]]; then
+	sudo -i dnf install tmux git gnupg2 openssh
+elif
+	sudo pacman -S tmux git gnupg openssh
+
+# Set up tmux
+ln -s ./tmux/tmux.conf ~/.tmux.conf
+# Get the tmux-plugin-manager
 mkdir -p ~/.tmux/plugins
-mkdir -p ~/.dotfiles
 git clone https://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
-git clone https://github.com/jreichmann/dotfiles.git ~/.dotfiles
 
-ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
+# Set up redshift
+ln -s ./redshift/redshift.conf ~/.config/redshift/redshift.conf
+
+# Set up gnupg things
+mkdir -p ~/.gnupg
+ln -s ./gnupg/gpg.conf ~/.gnupg/gpg.conf
+ln -s ./gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+ln -s ./gnupg/sshcontrol ~/.gnupg/sshcontrol
 
