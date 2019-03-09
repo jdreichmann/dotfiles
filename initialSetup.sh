@@ -21,6 +21,8 @@ mkdir -p ~/.gnupg
 ln -s ./gnupg/gpg.conf ~/.gnupg/gpg.conf
 ln -s ./gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ln -s ./gnupg/sshcontrol ~/.gnupg/sshcontrol
+ln -s ./gnupg/gnupg_agent ~/.gnupg/gnupg_agent
+chmod u+x ~/.gnupg/gnupg_agent
 
 git config --global gpg.program gpg2
 git config --global user.name jreichmann
