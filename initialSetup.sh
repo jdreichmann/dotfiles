@@ -14,12 +14,15 @@ ln -s ./tmux/tmux.conf ~/.tmux.conf
 mkdir -p ~/.tmux/plugins
 git clone https://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
 
+HERE=$(pwd)
+
 # Set up redshift
-ln -s ./redshift/redshift.conf ~/.config/redshift/redshift.conf
+mkdir -p ~/.config/redshift
+mkdir -p ~/.config/autostart
+ln -s $HERE/redshift/redshift.conf ~/.config/redshift/redshift.conf
 
 # Set up gnupg things
 mkdir -p ~/.gnupg
-HERE=$(pwd)
 ln -s $HERE/gnupg/gpg.conf ~/.gnupg/gpg.conf
 ln -s $HERE/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ln -s $HERE/gnupg/sshcontrol ~/.gnupg/sshcontrol
