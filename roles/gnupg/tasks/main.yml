@@ -1,0 +1,28 @@
+---
+# Installs GnuPG2 and templates the configs
+
+- name: Install gnupg (RedHat*)
+  yum: name=gnupg2 state=latest
+  when: ansible_os_family == "RedHat"
+
+- name: Install gnupg (Arch)
+  pacman:
+    name: gnupg
+    state: latest
+  when: ansible_os_family == "Archlinux"
+
+- name: Configure gpg.conf (behaviour of gpg)
+  template: src=gpg.conf.j2 ~/.gnupg/gpg.conf
+
+- name: Configure gpg-agent.conf (agent configuration)
+  template: src=gpg-agent.conf.j2 ~/.gnupg/gpg-agent.conf
+
+- name: Configure ssh-control (in order for gpg-agent to act as ssh-agent)
+  template: src=sshcontrol.j2 ~/.gnupg/sshcontrol
+
+- name: Copy gnupg_agent script, which makes gpg-agent responsible for ssh-auth
+  copy:
+    src: "{{ role_path }}/files/gpg_agent"
+    dest: ~/.gnupg/gpg_agent
+    mode: 0700
+

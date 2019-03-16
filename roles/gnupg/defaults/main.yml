@@ -1,0 +1,7 @@
+# How long the PIN gets cached (max)
+gpg_cache_ttl: 300
+gpg_cache_ttl_ssh: 300
+
+# Array of all keygrips to pass to sshcontrol
+gpg_keygrips: []
+

@@ -1,0 +1,3 @@
+# List of all keygrips to be templated into the sshcontrol
+gpg_keygrips: ["468CB012C93D96E3C67F2CBCFB112400050023B6"]
+
