@@ -29,7 +29,7 @@ ln -s $HERE/gnupg/sshcontrol ~/.gnupg/sshcontrol
 ln -s $HERE/gnupg/gnupg_agent ~/.gnupg/gnupg_agent
 
 git config --global gpg.program gpg2
-git config --global user.name jreichmann
+git config --global user.name jdreichmann
 git config --global user.email johanna.reichmann@delta-industries.de
 git config --global user.signingkey 03624C433676E465
 git config --global commit.gpgsign true
