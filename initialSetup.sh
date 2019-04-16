@@ -8,13 +8,13 @@ elif [[ $(command -v pacman) == 0 ]]; then
 	sudo pacman -S tmux git gnupg openssh
 fi
 
+HERE=$(pwd)
+
 # Set up tmux
-ln -s ./tmux/tmux.conf ~/.tmux.conf
+ln -s $HERE/tmux/tmux.conf ~/.tmux.conf
 # Get the tmux-plugin-manager
 mkdir -p ~/.tmux/plugins
 git clone https://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
-
-HERE=$(pwd)
 
 # Set up redshift
 mkdir -p ~/.config/redshift
