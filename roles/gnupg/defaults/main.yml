@@ -5,3 +5,5 @@ gpg_cache_ttl_ssh: 300
 # Array of all keygrips to pass to sshcontrol
 gpg_keygrips: []
 
+gpg_folder: "~/.gnupg"
+
