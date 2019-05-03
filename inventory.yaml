@@ -1,0 +1,8 @@
+---
+
+all:
+  hosts:
+    xenon:
+      ansible_host: xenon.int.finallycoffee.eu
+  vars:
+    ansible_user: transcaffeine
