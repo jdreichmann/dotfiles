@@ -12,3 +12,7 @@ gnupg:
   hosts:
     xenon:
 
+redshift:
+  hosts:
+    xenon:
+

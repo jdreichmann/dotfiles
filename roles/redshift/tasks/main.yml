@@ -5,7 +5,6 @@
     name: redshift
     state: present
 
-
 - name: Ensure .config folder for redshift exists
   file:
     path: ~/.config/redshift
@@ -19,5 +18,5 @@
 - name: Template redshift autostart file
   template:
     src: redshift-gtk.desktop.j2
-    dest: redshift-gtk.desktop
+    dest: ~/.config/autotstart/redshift-gtk.desktop
 
