@@ -16,12 +16,12 @@
 - name: Configure gpg.conf (behaviour of gpg)
   template:
     src: gpg.conf.j2
-    dest: "(( gpg_folder ))/gpg.conf"
+    dest: "{{ gpg_folder }}/gpg.conf"
 
 - name: Configure gpg-agent.conf (agent configuration)
   template:
     src: gpg-agent.conf.j2
-    dest: "(( gpg_folder }}/gpg-agent.conf"
+    dest: "{{ gpg_folder }}/gpg-agent.conf"
 
 - name: Configure ssh-control (in order for gpg-agent to act as ssh-agent)
   template:
