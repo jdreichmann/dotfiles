@@ -29,9 +29,9 @@
     dest: "{{ gpg_folder }}/sshcontrol"
 
 - name: Copy gnupg_agent script, which makes gpg-agent responsible for ssh-auth
-  copy:
-    src: gpg_agent.j2
-    dest: "{{ gpg_folder }}/gpg_agent"
+  template:
+    src: gnupg_agent.j2
+    dest: "{{ gpg_folder }}/gnupg_agent"
     mode: 0700
 
 
