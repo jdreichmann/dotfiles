@@ -1,0 +1,20 @@
+---
+
+all:
+  hosts:
+    xenon:
+      ansible_host: xenon.int.finallycoffee.eu
+      ansible_connection: local
+  vars:
+    ansible_user: transcaffeine
+    ansible_become_user: transcaffeine
+    ansible_become: true
+
+gnupg:
+  hosts:
+    xenon:
+
+redshift:
+  hosts:
+    xenon:
+

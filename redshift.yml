@@ -1,0 +1,7 @@
+---
+
+- name: Sets up redshift and creates an autostart file
+  hosts: redshift
+  become: true
+  roles:
+    - redshift

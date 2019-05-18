@@ -2,7 +2,14 @@
 alias ll='ls -al --color=auto'
 alias ls='ls -l --color=auto'
 
+alias nb=man
+alias enby=man
+
+alias furryfox=firefox
+
+alias flauschctl=systemctl
 
 # GnuPG2
 alias gpg=gpg2
+
 

@@ -1,0 +1,23 @@
+---
+
+- name: Install redshift
+  package:
+    name: redshift
+    state: present
+
+
+- name: Ensure .config folder for redshift exists
+  file:
+    path: ~/.config/redshift
+    state: directory
+
+- name: Template redshift config
+  template:
+    src: redshift.conf.j2
+    dest: ~/.config/redshift/redshift.conf
+
+- name: Template redshift autostart file
+  template:
+    src: redshift-gtk.desktop.j2
+    dest: ~/.config/autostart/redshift-gtk.desktop
+

@@ -1,0 +1,8 @@
+---
+
+- name: Sets up gpg and the configs for using it as a ssh-agent
+  #connection: local
+  hosts: gnupg
+  become: true
+  roles:
+    - gnupg
